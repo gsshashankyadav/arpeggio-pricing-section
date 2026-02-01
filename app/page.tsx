@@ -263,36 +263,6 @@ export default function MembershipPage() {
               <div className="flex gap-6 items-center justify-center">
 
                 <motion.button
-                  className="font-semibold hover:text-accent text-[24px] md:text-[28px] flex flex-col items-start hidden cursor-none"
-                  initial="initial"
-                  whileHover="hover"
-                >
-                  select plan
-
-                  <svg
-                    width="90%"
-                    height="2"
-                    viewBox="0 0 200 2"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-accent" 
-                  >
-                    <motion.line
-                      x1="0"
-                      y1="1"
-                      x2="200"
-                      y2="1"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      variants={{
-                        initial: { pathLength: 0.1 },
-                        hover: { pathLength: 1 },
-                      }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    />
-                  </svg>
-                </motion.button>
-                <motion.button
                   className="font-semibold hover:text-accent text-[24px] md:text-[28px] flex flex-col items-start cursor-none"
                   initial="initial"
                   whileHover="hover"
