@@ -336,7 +336,7 @@ export default function MembershipPage() {
                 <motion.div
                   key={index}
                   
-                  className="py-5 border-b border-border/50 last:border-b-0 flex gap-4 items-start group"
+                  className="py-4 px-2 border-b border-border/50 last:border-b-0 flex gap-4 items-start group"
                 >
                   <motion.div
                     whileHover={{ scale: 1.2 }}
