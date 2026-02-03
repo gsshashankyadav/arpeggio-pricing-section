@@ -1,9 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence } from 'motion/react';
-import { Check } from 'lucide-react';
+import { motion} from 'motion/react';
 import { useState, useEffect } from 'react';
-import { tr } from 'motion/react-client';
 
 const corePlanFeatures = [
   {
@@ -73,10 +71,10 @@ export default function MembershipPage() {
   const price = selectedPlan === 'core' ? '5,499' : '9,800';
 
   return (
-    <div className="min-h-screen bg-background text-foreground cursor-none overflow-x-hidden md:px-10 px-6 ">
+    <div className="min-h-screen bg-[#fff] cursor-none overflow-x-hidden md:px-10 px-6  tracking-[-.04em]">
       {/* Custom Cursor */}
       <motion.div
-        className="fixed w-6 h-6 z-100 bg-accent rounded-full pointer-events-none"
+        className="fixed w-6 h-6 z-100 bg-[#ff4400] rounded-full pointer-events-none"
         animate={{
           x: cursor.x - 12,
           y: cursor.y - 12,
@@ -93,14 +91,14 @@ export default function MembershipPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="border-b border-border sticky top-0 bg-background/95 backdrop-blur-sm z-40"
+        className="border-b border-[#e6e6e6] sticky top-0 bg-[#fafafa]/95 backdrop-blur-sm z-40"
       >
         <div className="max-w-7xl mx-auto py-3 flex items-center justify-center gap-[16px] flex-col-reverse md:flex-row">
           <div className="flex items-start gap-1 md:pe-6 md:border-r  border-[#c0c0c0] ">
             <div className="pt-[10px]">
               <img src="/title-circle.svg" alt="" className='w-[16px] h-[16px]' />
             </div>
-            <span className="font-medium md:text-[35px] text-[32px] text-[#8A8A91]">Membership Plans</span>
+            <span className="font-medium md:text-[35px] text-[32px] text-[#c0c0c0]">Membership Plans</span>
           </div>
           <p className="text-[17px] text-[#333336] border-b md:border-none md:pb-0 pb-2">
             pricing
@@ -115,13 +113,13 @@ export default function MembershipPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-[120px] "
         >
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl text-[#333336] md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight tracking-tight"
+            className="text-5xl text-[#333336] md:text-6xl lg:text-7xl font-semibold mb-6 "
           >
             Your passport to flexible
             <br />
@@ -131,11 +129,11 @@ export default function MembershipPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[32px] md:text-[35px] font-medium text-[#8a8a91] mb-12 max-w-3xl mx-auto leading-tight"
+            className="text-[32px] md:text-[35px] font-medium text-[#8a8a91] mb-12 max-w-3xl mx-auto"
           >
             Get unlimited creativity and all premium features
 
-            with our monthly all-in-one plan.
+            with our monthly All-In-One plan.
           </motion.p>
         </motion.section>
 
@@ -150,7 +148,7 @@ export default function MembershipPage() {
 
               className="flex flex-col items-center  min-h-[500px]"
             >
-              <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden shadow-sm border border-border/50">
+              <div className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden shadow-sm border border-[#e6e6e6]/50">
                 {/* Background Image */}
                 <motion.div
                   key={`bg-${selectedPlan}`}
@@ -165,8 +163,6 @@ export default function MembershipPage() {
                     alt={`${selectedPlan} plan background`}
                     className="w-full h-full object-cover"
                   />
-                  {/* Optional overlay for better text readability */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/40" /> */}
                 </motion.div>
 
                 {/* Placeholder Image Content */}
@@ -175,20 +171,17 @@ export default function MembershipPage() {
                   className="flex flex-col items-center justify-center w-full h-full relative z-10"
                 >
                   {/* Overlay Text */}
-                  <div className="absolute top-6 left-6 text-left leading-tight">
-                    <p className="text-[19px] font-medium text-accent">Arpeggio</p>
-                    <p className="text-[28px] font-medium text-foreground">{selectedPlan === 'core' ? 'Core' : 'Pro'} Plan</p>
+                  <div className="absolute top-6 left-6 text-left">
+                    <p className="text-[19px] font-medium text-[#ff4400]">Arpeggio</p>
+                    <p className="text-[28px] font-medium text-[#333336]">{selectedPlan === 'core' ? 'Core' : 'Pro'} Plan</p>
                   </div>
                   <div className="absolute bottom-6 left-6 text-left">
                     <p className="mt-4 text-center flex ">
-                      <span className="text-[17px] text-accent">*</span> <span className="text-[17px] text-[#333336] text-semibold">Pause or cancel whenever you wish.</span>
+                      <span className="text-[17px] text-[#ff4400]">*</span> <span className="text-[17px] text-[#333336] font-medium">Pause or cancel whenever you wish.</span>
                     </p>
                   </div>
                 </motion.div>
               </div>
-
-              {/* Disclaimer */}
-
             </motion.div>
           
 
@@ -197,63 +190,59 @@ export default function MembershipPage() {
 
             <motion.div
               key={`pricing-${selectedPlan}`}
-
-              className="flex flex-col items-center justify-center pt-[40px] px-6"
+              className="flex flex-col items-center justify-center "
             >
               {/* Plan Toggle */}
               <motion.div
-               
                 className="flex justify-center mb-8"
               >
-                <div className="inline-flex items-center gap-1 bg-muted rounded-full  border border-black">
+                <div className="inline-flex items-center   rounded-full  border border-black">
                   <motion.button
                     onClick={() => setSelectedPlan('core')}
                     className={`p-4 rounded-full font-medium text-sm transition-all cursor-none ${selectedPlan === 'core'
-                        ? 'bg-foreground text-white shadow-sm'
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-[#333336] text-white shadow-sm'
+                        : 'text-[#333336] '
                       }`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+             
                   >
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-[17px]">
                     Core Plan {selectedPlan === 'core'
-                        ? <img src="core-icon.svg" alt="" />
-                        : <img src="core-icon-dark.svg" alt="" />
+                        ? <img src="core-icon.svg" alt="" className="w-5 h-5" />
+                        : <img src="core-icon-dark.svg" alt="" className="w-5 h-5" />
                       }
                     </span>
                   </motion.button>
                   <motion.button
                     onClick={() => setSelectedPlan('pro')}
                     className={`p-4 rounded-full font-medium text-sm transition-all cursor-none ${selectedPlan === 'pro'
-                        ? 'bg-foreground text-background shadow-sm'
-                        : 'text-muted-foreground hover:text-foreground'
+                        ? 'bg-[#333336] text-[#fafafa] shadow-sm'
+                        : 'text-[#333336] '
                       }`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+             
                   >
-                    <span className="flex items-center gap-2">
-                      Pro Plan <img src="pro-icon.svg" alt="" />
+                    <span className="flex items-center gap-2 text-[17px]">
+                      Pro Plan <img src="pro-icon.svg" className="w-5 h-5" alt="" />
                     </span>
                   </motion.button>
                 </div>
               </motion.div>
-              <p className="text-[32px] md:text-[48px] text-[#8a8a91] mb-12 md:mb-8 text-center font-medium leading-tight">Simple pricing, powerful <br className='hidden md:inline-block'/> features, no hidden fees</p>
+              <p className="text-[32px] md:text-[48px] text-[#8a8a91] mb-12 md:mb-8 text-center font-medium leading-[1.2]">Simple pricing, powerful <br className='hidden md:inline-block'/> features, no hidden fees</p>
 
               <motion.div
                
                 className="mb-[9px]"
               >
                 <div className="flex  justify-center gap-3">
-                  <span className="text-[40px] md:text-7xl font-bold text-foreground">${price}</span>
+                  <span className="text-[40px] md:text-7xl font-semibold text-[#333336]">${price}</span>
                   <span className="text-[17px] text-[#333336]">/month</span>
                 </div>
               </motion.div>
 
               <p className="mb-12 md:mb-8 text-center">
-                <span className="text-[17px] text-accent">*</span> <span className="text-[17px] text-[#8a8a91]">Minimal booking period — 2 months.</span>
+                <span className="text-[17px] text-[#ff4400]">*</span> <span className="text-[17px] text-[#8a8a91]">Minimal booking period — 2 months.</span>
               </p>
 
-              <p className="text:[19px] md:text-[21px] text-[#8a8a91] mb-12 md:mb-8 text-center leading-relaxed">
+              <p className="text:[19px] md:text-[21px] text-[#8a8a91] mb-12 md:mb-8 text-center font-medium  ">
                 Schedule a brief call if you need
                 <br />
                 further clarification.
@@ -263,7 +252,7 @@ export default function MembershipPage() {
               <div className="flex gap-6 items-center justify-center">
 
                 <motion.button
-                  className="font-semibold hover:text-accent text-[24px] md:text-[28px] flex flex-col items-start cursor-none"
+                  className="font-medium hover:text-[#ff4400] text-[24px] md:text-[28px] flex flex-col items-start cursor-none"
                   initial="initial"
                   whileHover="hover"
                 >
@@ -271,10 +260,10 @@ export default function MembershipPage() {
                   <svg
                     width="100%"
                     height="2"
-                    viewBox="0 0 150 2"
+                    viewBox="0 0 120 2"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-accent" 
+                    className="text-[#ff4400]" 
                   >
                     <motion.line
                       x1="0"
@@ -292,7 +281,7 @@ export default function MembershipPage() {
                   </svg>
                 </motion.button>
                 <motion.button
-                  className="font-semibold hover:text-accent  text-[24px] md:text-[28px] flex flex-col items-start cursor-none"
+                  className="font-medium hover:text-[#ff4400]  text-[24px] md:text-[28px] flex flex-col items-start cursor-none"
                   initial="initial"
                   whileHover="hover"
                 >
@@ -301,10 +290,10 @@ export default function MembershipPage() {
                   <svg
                     width="90%"
                     height="2"
-                    viewBox="0 0 150 2"
+                    viewBox="0 0 120 2"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="text-accent" 
+                    className="text-[#ff4400]" 
                   >
                     <motion.line
                       x1="0"
@@ -330,33 +319,33 @@ export default function MembershipPage() {
             <motion.div
               key={`features-${selectedPlan}`}
 
-              className="flex flex-col gap-0 pt-4"
+              className="flex justify-center "
             >
+              <div className=' flex flex-col justify-center w-[350px]'>
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   
-                  className="py-4 px-2 border-b border-border/50 last:border-b-0 flex gap-4 items-start group"
+                  className="py-4 px-2 border-b border-[#e6e6e6]/50 last:border-b-0 flex gap-4 items-start group"
                 >
                   <motion.div
-                    whileHover={{ scale: 1.2 }}
+                   
                     className="flex-shrink-0 mt-0.5"
                   >
-                    {/* <Check className="w-5 h-5 text-accent" strokeWidth={2.5} /> */}
                     <img src="check.svg" className="w-5 h-5 " alt="" />
                   </motion.div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-[#333336] text-[21px] mb-1">
+                    <h3 className="font-medium text-[#333336] text-[21px] mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-[17px] text-[#929298] leading-relaxed">
+                    <p className="text-[17px] text-[#929298]">
                       {feature.description}
                     </p>
                   </div>
                 </motion.div>
               ))}
+              </div>
             </motion.div>
-          
         </div>
       </main>
     </div>
