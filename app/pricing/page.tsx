@@ -122,7 +122,7 @@ export default function MembershipPage() {
             </div>
 
             {/* Main Content */}
-            <main className=" mx-auto">
+            <main className=" w-full">
 
                 {/* Content Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-[80px] min-h-[700px]">
